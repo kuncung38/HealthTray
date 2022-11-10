@@ -1,0 +1,18 @@
+Nasi putih : 130cal
+Nasi merah : 110cal
+Kentang tumbuk : 88 cal
+Roti gandum : 67cal
+Salad tomat : 16cal
+Sup Wortel: 65 cal
+Brocoli Rebus: 55cal
+Salad Timun Pedas : 15cal
+Tahu Tempe Bacem: 95cal
+Dada Ayam Panggang : 216cal
+Ikan Gurame Bakar : 192cal
+Bebek Panggang : 132 cal
+Iga Kambing Panggang : 109cal
+Susu Tanpa Lemak : 34cal
+yogurt strawberry : 132cal
+Kacang Panggang : 155cal
+vegetable smoothie : 120 cal
+
