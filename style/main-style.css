@@ -112,7 +112,7 @@ header{
 
 .cart-product-title{
     font-size: 1rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .cart-price{
@@ -146,6 +146,10 @@ header{
 }
 
 .total-price{
+    margin-left: 0.6rem;
+}
+
+.total-calories{
     margin-left: 0.5rem;
 }
 
@@ -212,7 +216,7 @@ header{
 .product-title{
     font-size: 1.1rem;
     font-weight: 600;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-bottom: 0.5rem;
 }
 

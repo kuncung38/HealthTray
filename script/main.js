@@ -87,25 +87,26 @@ function addCartClicked(event) {
     let shopProducts = button.parentElement
     let title = shopProducts.getElementsByClassName('product-title')[0].innerText
     let price = shopProducts.getElementsByClassName('price')[0].innerText
+    let calories = shopProducts.getElementsByClassName('calories')[0].innerText
     let productImg = shopProducts.getElementsByClassName("product-img")[0].src;
     // console.log(title, price, productImg);
-    addProductToCart(title, price, productImg)
+    addProductToCart(title, price, productImg, calories)
     updatetotal()
     console.log(isCartOpen)
-    if(!isCartOpen) {
+    if (!isCartOpen) {
         cart.classList.add('active')
         isCartOpen = true
     }
 }
 
-function addProductToCart(title, price, productImg) {
+function addProductToCart(title, price, productImg, calories) {
     let cartShopBox = document.createElement('div')
     cartShopBox.classList.add('cart-box')
     let cartItems = document.getElementsByClassName('cart-content')[0]
     let cartItemsNames = cartItems.getElementsByClassName('cart-product-title')
     for (let i = 0; i < cartItemsNames.length; i++) {
         if (cartItemsNames[i].innerText == title) {
-            alert('You have already add this item to cart')
+            alert('Pilih Yang Lain, Ini Udah,Katanya Mau Kurus')
             return
 
         }
@@ -115,6 +116,7 @@ function addProductToCart(title, price, productImg) {
                         <div class="detail-box">
                             <div class="cart-product-title">${title}</div>
                             <div class="cart-price"> ${price}</div>
+                            <span class="calories">${calories}</span>
                             <input type="number" value="1" class="cart-quantity">
                         </div>
                         <!-- Remove Cart -->
@@ -131,16 +133,21 @@ function updatetotal() {
     let cartContent = document.getElementsByClassName('cart-content')[0]
     let cartBoxes = cartContent.getElementsByClassName('cart-box')
     let total = 0;
+    let tocal=0
     for (let i = 0; i < cartBoxes.length; i++) {
         let cartBox = cartBoxes[i]
         let priceElement = cartBox.getElementsByClassName('cart-price')[0]
+        let caloriesElement = cartBox.getElementsByClassName('calories')[0]
         let quantityElement = cartBox.getElementsByClassName('cart-quantity')[0]
         let price = parseFloat(priceElement.innerText.replace('$', ""))
+        let calories = parseFloat(caloriesElement.innerText.replace('', ""))
         let quantity = quantityElement.value;
         total = total + (price * quantity);
+        tocal=tocal+(calories*quantity)
         //if price Contain some Cents Value
     }
     total = Math.round(total * 100) / 100
 
     document.getElementsByClassName('total-price')[0].innerText = '$' + total;
+    document.getElementsByClassName('total-calories')[0].innerText = tocal+'cal';
 }
