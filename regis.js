@@ -9,7 +9,8 @@ const container = document.querySelector('.container'),
       emailLogin = document.querySelector('#email-login'),
       passwordLogin = document.querySelector('#password-login'),
       loginButton = document.querySelector('#login-button'),
-      wrongInformation = document.querySelector('#wrongInformation')
+      wrongInformation = document.querySelector('#wrongInformation'),
+      wrongInformationText = document.querySelector("#wrongInformationText")
 
 const regisName = document.querySelector('#regisName'),
       regisEmail = document.querySelector('#regisEmail'),
@@ -111,6 +112,7 @@ function checkLogin() {
             console.log('mabok ya?')
             // wrongInformation
             setTimeout(function() {
+                wrongInformationText.innerHTML = 'Email atau passwordnya salah noh!'
                 loginButton.style['background-color'] = 'red';
                 wrongInformation.classList.toggle('show')
             },10)
@@ -134,12 +136,27 @@ function registerFunction(){
     let confirmPasswords = confirmPassword.value
 
     if(!regisNames || !regisEmails || !regisPasswords || !confirmPasswords){
-        setTimeout("registerButton.style['background-color'] = 'red';", 10)
-        setTimeout("registerButton.style['background-color'] = 'var(--primary-green)';", 200)
+        setTimeout(function() {
+            wrongInformationText.innerHTML ='Jangan ada yang kosong woi!'
+            registerButton.style['background-color'] = 'red';
+            wrongInformation.classList.toggle('show')
+        },20)
+        setTimeout(function() {
+            registerButton.style['background-color'] = 'var(--primary-green)';
+            wrongInformation.classList.toggle('show')
+        },800)
+        
     }else if(regisPasswords !== confirmPasswords){
-        console.log("Yg Bener Lah");
-        setTimeout("registerButton.style['background-color'] = 'red';", 10)
-        setTimeout("registerButton.style['background-color'] = 'var(--primary-green)';", 200)
+        setTimeout(function() {
+            wrongInformationText.innerHTML ='Passwordnya beda tuh haduu'
+            registerButton.style['background-color'] = 'red';
+            console.log(registerButton.style['background-color'])
+            wrongInformation.classList.toggle('show');
+        },10)
+        setTimeout(function() {
+            registerButton.style['background-color'] = 'var(--primary-green)';
+            wrongInformation.classList.toggle('show')
+        },800)
     } else {
         obj.email=regisEmails
         obj.password=regisPasswords

@@ -1,8 +1,8 @@
 # HealthTray
 First version
 
-welcome page - done
+welcome page  - done
 
 regis & login - done
 
-main         - done
+main          - (functionality) done 
