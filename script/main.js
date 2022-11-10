@@ -46,17 +46,17 @@ function ready() {
     }
 
     document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked)
-
 }
 
 
 function buyButtonClicked() {
-    alert('BELANJAAN LU UDAH JADI')
+    alert(`Siap dikirim ke alamat, bayar total harga ${document.querySelector('.total-price').innerHTML}. Bayarnya COD doang ya untuk sementara :D`)
     let cartContent = document.getElementsByClassName('cart-content')[0]
     while (cartContent.hasChildNodes()) {
         cartContent.removeChild(cartContent.firstChild)
     }
     updatetotal()
+    window.location.href = "./bye.html";
 }
 
 function removeCartItem(event) {
@@ -150,4 +150,6 @@ function updatetotal() {
 
     document.getElementsByClassName('total-price')[0].innerText = '$' + total;
     document.getElementsByClassName('total-calories')[0].innerText = tocal+'cal';
+    document.getElementsByClassName('total-price')[0].style['font-size'] = '1.5rem'
+    document.getElementsByClassName('total-calories')[0].style['font-size'] = '1.5rem' 
 }

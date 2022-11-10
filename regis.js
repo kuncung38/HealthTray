@@ -91,11 +91,14 @@ login.addEventListener('click', () => {
 // Forgot Password
 forgotLink.addEventListener('click', () => {
     container.style.display = 'none'
-    forgotPage.style.display = 'grid'
+    document.getElementById('backToHome').style.display = 'none'
+    forgotPage.style.display = 'block'
+
 })
 
 goBack.addEventListener('click', () => {
     forgotPage.style.display = 'none'
+    document.getElementById('backToHome').style.display = 'block'
     container.style.display = 'block'
 })
 
@@ -106,7 +109,7 @@ function checkLogin() {
     let inputPassword = passwordLogin.value
     for(let orang of user) {
         if(inputEmail === orang.email && inputPassword === orang.password) {
-            console.log('oke cocok jing')
+            window.location.href = "./main.html";
             break;
         } else {
             console.log('mabok ya?')
@@ -115,7 +118,7 @@ function checkLogin() {
                 wrongInformationText.innerHTML = 'Email atau passwordnya salah noh!'
                 loginButton.style['background-color'] = 'red';
                 wrongInformation.classList.toggle('show')
-            },10)
+            },30)
             setTimeout(function() {
                 loginButton.style['background-color'] = 'var(--primary-green)';
                 wrongInformation.classList.toggle('show')
@@ -140,7 +143,7 @@ function registerFunction(){
             wrongInformationText.innerHTML ='Jangan ada yang kosong woi!'
             registerButton.style['background-color'] = 'red';
             wrongInformation.classList.toggle('show')
-        },20)
+        },30)
         setTimeout(function() {
             registerButton.style['background-color'] = 'var(--primary-green)';
             wrongInformation.classList.toggle('show')
@@ -152,7 +155,7 @@ function registerFunction(){
             registerButton.style['background-color'] = 'red';
             console.log(registerButton.style['background-color'])
             wrongInformation.classList.toggle('show');
-        },10)
+        },30)
         setTimeout(function() {
             registerButton.style['background-color'] = 'var(--primary-green)';
             wrongInformation.classList.toggle('show')
@@ -161,6 +164,6 @@ function registerFunction(){
         obj.email=regisEmails
         obj.password=regisPasswords
         user.push(obj)
-        console.log('sukses woi')
+        window.location.href = "./main.html";
     }  
 }

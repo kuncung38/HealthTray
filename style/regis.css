@@ -37,6 +37,22 @@ body{
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+#backToHome {
+    position: absolute;
+    top: 5vh;
+    left:7vh;
+    width: 13rem;
+    height: 5rem;
+    background-color: rgb(254, 166, 35);
+    text-align: center;
+    line-height:4.5rem;
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: 800;
+    border-radius: 5rem;
+    color: #2d3727;
+}
+
 .container .forms {
     display: flex;
     align-items: center;

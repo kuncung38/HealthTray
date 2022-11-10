@@ -1,0 +1,90 @@
+/* write your code here */
+@font-face {
+    font-family: PlayFairItalic;
+    src: url(../Font/PlayfairDisplay-Italic.ttf);
+}
+
+html{
+    height: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-text{
+    height: 100%;
+    width: 100%;
+    color: black;
+    /* backdrop-filter: blur(4px); */
+    font-weight: bold;
+    font-family: PlayFairItalic;
+    font-size: 48px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.home-button{
+    margin-top: 4rem;
+    width: 12%;
+    height: 4.2%;
+    border-radius: 3rem;
+    background-color: rgb(124, 102, 102);
+    color: orange;
+    font-size: 1rem;
+}
+
+.home-button:hover{
+    background:linear-gradient(to bottom, #c4b597 5%, #a19761 100%);
+	background-color:#ffffff;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+}
+
+#image{
+    height: 100%;
+}
+
+#top-image{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#bottom-image{
+    /* width: 20%; */
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.strdbr-image{
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+}

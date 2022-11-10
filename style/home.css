@@ -27,14 +27,13 @@ body {
     background-position: center;
 }
 
-
 .section-1{
-    height: 50%;
+    height: 45%;
 }
 
 .section-2 {
     background-color: #c8f0b0;
-    height: 50%;
+    height: 55%;
     z-index: 2;
     clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
 }
@@ -42,9 +41,9 @@ body {
 .tulisan-box {
     z-index: 10;
     position:absolute;
-    top:17rem;
-    left: 8rem; 
-    height: 17rem;
+    top:35%;
+    left: 10rem; 
+    height: 18rem;
     width: 35rem;
     display: flex;
     flex-direction: column;
@@ -60,10 +59,11 @@ body {
     color: #465f38;
 }
 
+
 #logo {
     position: absolute;
-    top: 10rem;
-    right: 10rem;
+    top: 25%;
+    right: 11rem;
     margin: auto;
     /* width: 100vw; */
     width: 25rem;
