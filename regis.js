@@ -105,26 +105,28 @@ goBack.addEventListener('click', () => {
 
 //Login & Register button
 function checkLogin() {
+    let isFound = false
     let inputEmail = emailLogin.value
     let inputPassword = passwordLogin.value
     for(let orang of user) {
         if(inputEmail === orang.email && inputPassword === orang.password) {
             window.location.href = "./main.html";
-            break;
-        } else {
-            console.log('mabok ya?')
-            // wrongInformation
-            setTimeout(function() {
-                wrongInformationText.innerHTML = 'Email atau passwordnya salah noh!'
-                loginButton.style['background-color'] = 'red';
-                wrongInformation.classList.toggle('show')
-            },30)
-            setTimeout(function() {
-                loginButton.style['background-color'] = 'var(--primary-green)';
-                wrongInformation.classList.toggle('show')
-            },800)
+            isFound = true
             break;
         }
+    }
+    if (!isFound) {
+        console.log('mabok ya?')
+        // wrongInformation
+        setTimeout(function() {
+            wrongInformationText.innerHTML = 'Email atau passwordnya salah noh!'
+            loginButton.style['background-color'] = 'red';
+            wrongInformation.classList.toggle('show')
+        },30)
+        setTimeout(function() {
+            loginButton.style['background-color'] = 'var(--primary-green)';
+            wrongInformation.classList.toggle('show')
+        },800)
     }
 }
 
